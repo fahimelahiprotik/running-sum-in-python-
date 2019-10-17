@@ -1,20 +1,38 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import signal
+
+
 w=51
 y=0,'type=float'
 x=np.array([])
 error=0,'type=float'
+
 print('x=',len(x))
 x=np.random.rand(w)
 m=np.array([len(x)])
 f=[]
 k=[]
-y=np.std(x) #standarad deviation
-error=y/np.sqrt(w) #stanadard error mean
+y=np.std(x)       #standarad deviation
+
+error=y/np.sqrt(w)  #stanadard error mean 
+
 def runing_sub(x):
-m=np.array([len(x)])
-for i in range(0,len(x)-1):
-m=(x[i]-error)
-f=np.append(m)
+ cout=0
+ m = np.array([len(x)])
+ if cout!=len(x):
+  for i in range(0,len(x)-1):
+   m=(x[i]-error)
+
+ cout=+1
+
 k=runing_sub(x)
+#for i in range(len(w-1)):
+# error[i]=y[i]/np.sqrt(w)
+
+
+#plt.plot(x,y)
+#plt.xscale('symlog')
+#plt.ylabel('symlogx')
+#plt.grid(True)
+#plt.gca().xaxis.grid(True, which='minor')
