@@ -1,0 +1,20 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import signal
+w=51
+y=0,'type=float'
+x=np.array([])
+error=0,'type=float'
+print('x=',len(x))
+x=np.random.rand(w)
+m=np.array([len(x)])
+f=[]
+k=[]
+y=np.std(x) #standarad deviation
+error=y/np.sqrt(w) #stanadard error mean
+def runing_sub(x):
+m=np.array([len(x)])
+for i in range(0,len(x)-1):
+m=(x[i]-error)
+f=np.append(m)
+k=runing_sub(x)
